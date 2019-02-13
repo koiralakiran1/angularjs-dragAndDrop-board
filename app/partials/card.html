@@ -1,5 +1,5 @@
 <div class="card bg-light-blue">
-  <h3 class="card-header card-title">{{listName}} <i ng-click="toggleNewListItemMode(list)" class="fas fa-plus-circle"></i> </h3>
+  <h5 class="card-header card-title">{{listName}} <i ng-click="toggleNewListItemMode(list)" class="fas fa-plus-circle"></i> </h5>
   <!-- The dnd-list directive allows to drop elements into it.
   The dropped data will be added to the referenced list -->
   <ul dnd-list="list.listItems" class="list-group">
@@ -19,9 +19,12 @@
             {{item.label}}
         </li>
         <li class="list-group-item add-new-list-item" ng-show="list.newListItemMode">
-          <form class="new-list-form">
+          <form class="new-list-form" ng-submit="addNewListItem(list, list.newListItemTitle)">
             <input ng-model="list.newListItemTitle" type="text" class="form-control new-list-title-input" placeholder="Enter card title" />
-            <button ng-click="addNewListItem(list, list.newListItemTitle)" type="button" class="btn btn-success new-list-title-submit">Add</button>
+            <div class="btn-group col-lg-12" role="group">
+              <button ng-click="addNewListItem(list, list.newListItemTitle)" type="button" class="col-lg-6 btn btn-success new-list-title-submit">Add</button>
+              <button ng-click="toggleNewListItemMode(list)" type="button" class="col-lg-6 btn btn-danger new-list-title-submit">Cancel</button>
+            </div>
           </form>
         </li>
   </ul>

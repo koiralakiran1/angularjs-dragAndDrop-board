@@ -25,10 +25,13 @@
         </div>
         <div class="col-md-2 single-list">
           <div class="card bg-light-blue">
-            <h6 ng-click="toggleNewListMode()" class="add-new-list card-header card-title" ng-hide="newListMode"><a href="#"> + Add another list</a></h6>
+            <h6 ng-click="toggleNewListMode()" class="add-new-list card-header card-title" ng-hide="newListMode"><a href="#"> + Add a list</a></h6>
             <form ng-submit="addNewList(newListTitle)" class="card-header new-list-form" ng-show="newListMode">
               <input type="text" ng-model="newListTitle" class="form-control new-list-title-input" placeholder="Enter list title..." />
-              <button type="button" ng-click="addNewList(newListTitle)" class="btn btn-success new-list-title-submit">Add</button>
+              <div class="btn-group col-lg-12" role="group">
+                <button type="button" ng-click="addNewList(newListTitle)" class="col-lg-6 btn btn-success new-list-title-submit">Add</button>
+                <button type="button" ng-click="toggleNewListMode()" class="col-lg-16 btn btn-danger new-list-title-cancel">Cancel</button>
+              </div>
             </form>
           </div>
         </div>

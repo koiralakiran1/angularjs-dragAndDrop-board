@@ -107,11 +107,11 @@ a:hover {
 .new-list-form {
   padding: 5px;
 }
-.new-list-title-submit {
-  display: block;
-  margin: auto;
-}
 
 .add-new-list-item {
   padding: 0px !important;
 }
+/*
+.button-group .btn-danger {
+  float: right;
+} */
