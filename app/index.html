@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./libs//bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./libs/font-awesome/css/all.min.css" />
+  <link rel="stylesheet" href="./styles/reset.css" />
+  <link rel="stylesheet" type="text/css" href="./styles/index.css" />
+
+  <script src="./libs/angular.js"></script>
+  <script src="./libs/angular-drag-and-drop-lists.min.js"></script>
+  <script src="./js/index.js"></script>
+</head>
+<body ng-app="app">
+  <div class="app-body container-flex" ng-controller="SimpleDemoController">
+    <div ng-include="'./partials/navbar.html'"></div>
+    <div class="container-flex">
+      <div class="simpleDemo row col-md-12">
+        <div ng-repeat="(listName, list) in models.lists" class="col-md-2 single-list">
+          <div ng-include="'./partials/card.html'"></div>
+        </div>
+        <div class="col-md-2 single-list">
+          <div class="card bg-light-blue">
+            <h6 ng-click="toggleNewListMode()" class="add-new-list card-header card-title" ng-hide="newListMode"><a href="#"> + Add another list</a></h6>
+            <form ng-submit="addNewList(newListTitle)" class="card-header new-list-form" ng-show="newListMode">
+              <input type="text" ng-model="newListTitle" class="form-control new-list-title-input" placeholder="Enter list title..." />
+              <button type="button" ng-click="addNewList(newListTitle)" class="btn btn-success new-list-title-submit">Add</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
