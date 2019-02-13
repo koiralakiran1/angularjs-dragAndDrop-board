@@ -111,3 +111,7 @@ a:hover {
   display: block;
   margin: auto;
 }
+
+.add-new-list-item {
+  padding: 0px !important;
+}

@@ -1,22 +1,28 @@
 <div class="card bg-light-blue">
-  <h3 class="card-header card-title">{{listName}} <i class="fas fa-plus-circle"></i> </h3>
+  <h3 class="card-header card-title">{{listName}} <i ng-click="toggleNewListItemMode(list)" class="fas fa-plus-circle"></i> </h3>
   <!-- The dnd-list directive allows to drop elements into it.
   The dropped data will be added to the referenced list -->
-  <ul dnd-list="list" class="list-group">
+  <ul dnd-list="list.listItems" class="list-group">
       <!-- The dnd-draggable directive makes an element draggable and will
           transfer the object that was assigned to it. If an element was
           dragged away, you have to remove it from the original list
           yourself using the dnd-moved attribute -->
         <li
             class="list-group-item card"
-            ng-repeat="item in list"
+            ng-repeat="item in list.listItems"
             dnd-draggable="item"
-            dnd-moved="list.splice($index, 1)"
+            dnd-moved="list.listItems.splice($index, 1)"
             dnd-effect-allowed="move"
             dnd-selected="models.selected = item"
             ng-class="{'selected': models.selected === item}"
             >
             {{item.label}}
         </li>
-    </ul>
+        <li class="list-group-item add-new-list-item" ng-show="list.newListItemMode">
+          <form class="new-list-form">
+            <input ng-model="list.newListItemTitle" type="text" class="form-control new-list-title-input" placeholder="Enter card title" />
+            <button ng-click="addNewListItem(list, list.newListItemTitle)" type="button" class="btn btn-success new-list-title-submit">Add</button>
+          </form>
+        </li>
+  </ul>
 </div>
