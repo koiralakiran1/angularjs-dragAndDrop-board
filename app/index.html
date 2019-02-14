@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./libs/font-awesome/css/all.min.css" />
   <link rel="stylesheet" href="./styles/reset.css" />
   <link rel="stylesheet" type="text/css" href="./styles/index.css" />
+  <link rel="shortcut icon" type="image/png" href="./images/favicon.png"/>
 
   <script src="./libs/angular.js"></script>
   <script src="./libs/angular-drag-and-drop-lists.min.js"></script>
@@ -19,7 +20,7 @@
   <div class="app-body container-flex" ng-controller="SimpleDemoController">
     <div ng-include="'./partials/navbar.html'"></div>
 
-    <div class="container-flex">
+    <div class="container-flex list-display-body">
       <div class="simpleDemo row col-md-12">
         <div ng-repeat="(listName, list) in models.lists" class="col-md-2 single-list">
           <div ng-include="'./partials/card.html'"></div>

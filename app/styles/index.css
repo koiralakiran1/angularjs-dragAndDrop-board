@@ -35,6 +35,9 @@ a:hover {
   text-decoration: none;
   color: black;
 }
+nav {
+  box-shadow: 5px 5px 5px #005C91;
+}
 
 .simpleDemo ul[dnd-list] li {
   background-color: #fff;
@@ -49,13 +52,17 @@ a:hover {
 /**
 * Show selected elements in green
 */
-.simpleDemo ul[dnd-list] li.selected {
+/* .simpleDemo ul[dnd-list] li.selected {
   background-color: #dff0d8;
   color: #3c763d;
-}
+} */
 
 .list-group {
   padding-bottom: 10px;
+}
+
+.bg-primary {
+  background-color: #0067A3 !important;
 }
 
 .list-group-item {
@@ -69,13 +76,16 @@ a:hover {
 
 .simpleDemo {
   padding: 0px;
-  padding-top: 5px;
+  padding-top: 15px;
   margin: auto;
 }
 
 .card {
   margin-bottom: 10px;
   position: relative;
+}
+.card-header.add-new-list {
+  border: none;
 }
 
 .bg-light-blue {
@@ -96,9 +106,16 @@ a:hover {
   color: black;
 }
 
+.add-new-list {
+  background-color: #0067A3;
+}
+.card {
+  border: none !important;
+}
+
 .add-new-list:hover {
   cursor: pointer;
-  background-color: grey;
+  background-color: #005C91;
 }
 
 .new-list-title-input {
@@ -119,10 +136,10 @@ a:hover {
 
 .close-icon {
   display: none;
-  color: grey;
+  color: rgb(75, 75, 75);
   position: absolute;
-  right: -14px;
-  top: -14px;
+  right: -10px;
+  top: -10px;
 }
 
 .close-icon:hover {
@@ -130,6 +147,10 @@ a:hover {
   color: black;
 }
 
-.card.bg-light-blue:hover h3.close-icon {
+.card.bg-light-blue:hover .close-icon {
   display: block;
+}
+
+body {
+  background-color: #0079BF;
 }
