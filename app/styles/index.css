@@ -1,3 +1,17 @@
+body {
+  background-color: #0079BF;
+}
+a {
+  color: black;
+}
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+nav {
+  box-shadow: 5px 5px 5px #005C91;
+}
+
 /**
  * The dnd-list should always have a min-height,
  * otherwise you can't drop to it once it's empty
@@ -16,6 +30,9 @@
 .simpleDemo ul[dnd-list] .dndDraggingSource {
   display: none;
 }
+/* .simpleDemo ul[dnd-list] .dndDragging {
+  background-color: lightcoral;
+} */
 
 /**
 * An element with .dndPlaceholder class will be
@@ -26,17 +43,6 @@
   background-color: #ddd;
   display: block;
   min-height: 42px;
-}
-
-a {
-  color: black;
-}
-a:hover {
-  text-decoration: none;
-  color: black;
-}
-nav {
-  box-shadow: 5px 5px 5px #005C91;
 }
 
 .simpleDemo ul[dnd-list] li {
@@ -55,6 +61,7 @@ nav {
 /* .simpleDemo ul[dnd-list] li.selected {
   background-color: #dff0d8;
   color: #3c763d;
+  transform: rotate(-5deg);
 } */
 
 .list-group {
@@ -151,6 +158,12 @@ nav {
   display: block;
 }
 
-body {
-  background-color: #0079BF;
+.list-group-item i {
+  float: right;
+  color: grey;
 }
+.list-group-item i:hover {
+  cursor: pointer;
+  color: black;
+}
+

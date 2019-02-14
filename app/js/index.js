@@ -48,10 +48,21 @@ angular.module('app', ['dndLists']).controller('SimpleDemoController', function 
   $scope.addNewListItem = function (obj, title) {
     if (title) {
       obj.listItems.push({
-        label: title
+        label: title,
+        optionsMode: false
       });
     }
     $scope.toggleNewListItemMode(obj);
+  };
+
+  $scope.deleteListItem = function(list, item) {
+    if(list.indexOf(item) > -1) {
+      list.splice(list.indexOf(item), 1);
+    }
+  };
+
+  $scope.showItemOptions = function(item) {
+    item.optionsMode = !item.optionsMode;
   };
 
   $scope.removeList = function (list, listName) {

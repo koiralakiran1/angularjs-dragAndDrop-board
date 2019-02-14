@@ -17,7 +17,14 @@
             dnd-selected="models.selected = item"
             ng-class="{'selected': models.selected === item}"
             >
-            {{item.label}}
+            <div>
+              {{item.label}}
+              <i ng-click="showItemOptions(item)" class="fas fa-ellipsis-v"></i>
+            </div>
+            <div class="btn-group btn-group-sm col-lg-12 " ng-show="item.optionsMode" role="group">
+              <button class="btn col-lg-6 btn-primary" ng-click="editListItem(list.listItems, item)">Edit</button>
+              <button class="btn col-lg-6 btn-danger" ng-click="deleteListItem(list.listItems, item)">Delete</button>
+            </div>
         </li>
         <li class="list-group-item add-new-list-item" ng-show="list.newListItemMode">
           <form class="new-list-form" ng-submit="addNewListItem(list, list.newListItemTitle)">
