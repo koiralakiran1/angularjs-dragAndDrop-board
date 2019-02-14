@@ -22,13 +22,13 @@ angular.module('app', ['dndLists']).controller('SimpleDemoController', function(
   }
 
   $scope.newListMode = false;
-  $scope.toggleNewListMode = function() {
+  $scope.toggleNewListMode = function() { // functional ??
     $scope.newListTitle = '';
     $scope.newListMode = !$scope.newListMode;
   };
-  $scope.addNewList = function(title) {
-    if(title) {
-      $scope.models.lists[title] = {
+  $scope.addNewList = function(oldList, newListTitle) {
+    if(newListTitle) {
+      oldList[newListTitle] = {
         listItems: [],
         newListItemMode: false
       };
@@ -45,5 +45,9 @@ angular.module('app', ['dndLists']).controller('SimpleDemoController', function(
       obj.listItems.push({ label: title });
     }
     $scope.toggleNewListItemMode(obj);
+  };
+
+  $scope.removeList = function(list, listName) {
+    delete list[listName];
   };
 });

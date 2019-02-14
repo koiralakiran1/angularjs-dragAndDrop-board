@@ -18,25 +18,29 @@
 <body ng-app="app">
   <div class="app-body container-flex" ng-controller="SimpleDemoController">
     <div ng-include="'./partials/navbar.html'"></div>
+
     <div class="container-flex">
       <div class="simpleDemo row col-md-12">
         <div ng-repeat="(listName, list) in models.lists" class="col-md-2 single-list">
           <div ng-include="'./partials/card.html'"></div>
         </div>
+
         <div class="col-md-2 single-list">
           <div class="card bg-light-blue">
             <h6 ng-click="toggleNewListMode()" class="add-new-list card-header card-title" ng-hide="newListMode"><a href="#"> + Add a list</a></h6>
-            <form ng-submit="addNewList(newListTitle)" class="card-header new-list-form" ng-show="newListMode">
+            <form ng-submit="addNewList(models.lists, newListTitle)" class="card-header new-list-form" ng-show="newListMode">
               <input type="text" ng-model="newListTitle" class="form-control new-list-title-input" placeholder="Enter list title..." />
               <div class="btn-group col-lg-12" role="group">
-                <button type="button" ng-click="addNewList(newListTitle)" class="col-lg-6 btn btn-success new-list-title-submit">Add</button>
-                <button type="button" ng-click="toggleNewListMode()" class="col-lg-16 btn btn-danger new-list-title-cancel">Cancel</button>
+                <button type="button" ng-click="addNewList(models.lists, newListTitle)" class="col-lg-6 btn btn-success new-list-title-submit">Add</button>
+                <button type="button" ng-click="toggleNewListMode()" class="col-lg-6 btn btn-danger new-list-title-cancel">Cancel</button>
               </div>
             </form>
           </div>
         </div>
+
       </div>
     </div>
+
   </div>
 </body>
 </html>
